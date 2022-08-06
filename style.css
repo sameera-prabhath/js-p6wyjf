@@ -1,0 +1,53 @@
+.c {
+  width: 200px;
+  height: 200px;
+  background-color: #e27a7a;
+  background-image: radial-gradient(circle, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  border-radius: 50%;
+  position: relative;
+}
+.m {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+  z-index: 1;
+}
+
+.m3 {
+  position: absolute;
+  left: 135px;
+  top: 38px;
+  width: 80px;
+  height: 124px;
+  background-color: rgb(255, 255, 255);
+  /* border-radius: 50px 0 0 50px; */
+  border-radius: 50% 0 0 50%;
+  z-index: 1;
+}
+
+.m1 {
+  position: absolute;
+  left: 135px;
+  top: 30px;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+  background-color: #eb8d8d;
+  background-image: radial-gradient(circle, #a8eb12, #00bf72, #008793, #004d7a, #051937);
+  border-radius: 50%;
+}
+.m2 {
+  position: absolute;
+  left: 135px;
+  top: 120px;
+  width: 50px;
+  height: 50px;
+  z-index: 2;
+  background-color: #eb8d8d;
+  background-image: radial-gradient(circle, #a8eb12, #00bf72, #008793, #004d7a, #051937);
+  border-radius: 50%;
+}
