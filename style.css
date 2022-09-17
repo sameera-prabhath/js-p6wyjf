@@ -1,18 +1,31 @@
+body {
+  background-color: #202125;
+}
+* {
+  box-sizing: border-box;
+}
+.coderapy {
+  margin: 80px auto;
+  margin-bottom: 5px;
+  width: fit-content;
+}
+
 .c {
   width: 200px;
   height: 200px;
   background-color: #e27a7a;
-  background-image: radial-gradient(circle, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  background-image: radial-gradient(circle, #a99b5a, #8f7e4b, #3f2e14, #3f2e14);
   border-radius: 50%;
   position: relative;
 }
+
 .m {
   position: absolute;
   left: 50px;
   top: 50px;
   width: 100px;
   height: 100px;
-  background-color: rgb(255, 255, 255);
+  background-color: #202125;
   border-radius: 50px;
   z-index: 1;
 }
@@ -23,13 +36,14 @@
   top: 38px;
   width: 80px;
   height: 124px;
-  background-color: rgb(255, 255, 255);
+  background-color: #202125;
   /* border-radius: 50px 0 0 50px; */
   border-radius: 50% 0 0 50%;
   z-index: 1;
 }
 
-.m1 {
+.c1,
+.c2 {
   position: absolute;
   left: 135px;
   top: 30px;
@@ -37,17 +51,140 @@
   height: 50px;
   z-index: 2;
   background-color: #eb8d8d;
-  background-image: radial-gradient(circle, #a8eb12, #00bf72, #008793, #004d7a, #051937);
+  background-image: radial-gradient(circle, #a99b5a, #8f7e4b, #3f2e14, #3f2e14);
   border-radius: 50%;
 }
-.m2 {
-  position: absolute;
-  left: 135px;
+.c2 {
   top: 120px;
-  width: 50px;
-  height: 50px;
-  z-index: 2;
-  background-color: #eb8d8d;
-  background-image: radial-gradient(circle, #a8eb12, #00bf72, #008793, #004d7a, #051937);
-  border-radius: 50%;
+}
+
+
+.play {
+  position: absolute;
+  transform: rotate(45deg);
+  z-index: 50;
+  animation: anim 5s linear infinite;
+}
+
+@keyframes anim {
+  0% {
+    border: 20px solid #3f2e14;
+    border-radius: 10px;
+    background: transparent;
+    width: 250px;
+    height: 250px;
+    top: -25px;
+    left: -25px;
+    clip-path: polygon(
+      0 30%,
+      10% 30%,
+      30% 10%,
+      30% 0,
+      100% 0,
+      100% 70%,
+      90% 70%,
+      70% 90%,
+      70% 100%,
+      0 100%
+    );
+  }
+
+  20% {
+    border: 20px solid #3f2e14;
+    background: transparent;
+    width: 250px;
+    height: 250px;
+    top: -25px;
+    left: -25px;
+  }
+ 
+  40% {
+    background: transparent;
+    clip-path: polygon(
+      0 30%,
+      10% 30%,
+      30% 10%,
+      30% 0,
+      100% 0,
+      100% 70%,
+      90% 70%,
+      70% 90%,
+      70% 100%,
+      0 100%
+    );
+  }
+
+  50% {
+    width: 70px;
+    height: 70px;
+    border-radius: 4px;
+    top: 65px;
+    left: 65px;
+    border: 2px solid #3f2e14;
+    clip-path: polygon(0 0%, 0% 0, 100% 0, 100% 100%, 100% 100%, 0 100%);
+  }
+
+  60% {
+    border: 0px solid #3f2e14;
+    background: linear-gradient(
+      to right top,
+      #3f2e14,
+      #3f2e14,
+      #3f2e14,
+      #8f7e4b,
+      #8f7e4b,
+      #8f7e4b
+    );
+  }
+
+  100% {
+    width: 70px;
+    height: 70px;
+    border-radius: 4px;
+    top: 65px;
+    left: 65px;
+  }
+}
+
+/* sdsmfsdkfnsdjfkjfbdsjfbdkfb 
+*/
+
+h1 {
+  margin: 50px auto;
+  font-size: 42px;
+  font-family: monospace;
+  color: #599100;
+  width: fit-content;
+  position: relative;
+}
+
+h1::before,
+h1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+h1::before {
+  background: #202125;
+  animation: typing 3s steps(12) forwards;
+}
+h1::after {
+  width: 3px;
+  background: #599100;
+  animation: typing 3s steps(12) forwards, blink 0.75s steps(12) infinite;
+}
+
+@keyframes typing {
+  to {
+    left: 100%;
+  }
+}
+@keyframes blink {
+  to {
+    background: transparent;
+  }
 }
