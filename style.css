@@ -7,16 +7,32 @@ body {
 .coderapy {
   margin: 80px auto;
   margin-bottom: 5px;
-  width: fit-content;
+  position: relative;
+  width: 200px;
+  height: 200px;
 }
-
+ 
 .c {
   width: 200px;
   height: 200px;
+  transform: scale(1);
   background-color: #e27a7a;
   background-image: radial-gradient(circle, #a99b5a, #8f7e4b, #3f2e14, #3f2e14);
   border-radius: 50%;
-  position: relative;
+  animation: co 5s ease;
+  z-index: 1;
+} 
+
+@keyframes co {
+  0% {
+    transform: scale(0.7);
+  }
+  20% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .m {
@@ -58,12 +74,25 @@ body {
   top: 120px;
 }
 
-
 .play {
   position: absolute;
   transform: rotate(45deg);
   z-index: 50;
-  animation: anim 5s linear infinite;
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+  top: 65px;
+  left: 65px;
+  background: linear-gradient(
+    to right top,
+    #3f2e14,
+    #3f2e14,
+    #3f2e14,
+    #8f7e4b,
+    #8f7e4b,
+    #8f7e4b 
+  );
+  animation: anim 5s linear;
 }
 
 @keyframes anim {
@@ -87,17 +116,19 @@ body {
       70% 100%,
       0 100%
     );
-  }
+    transform: rotate(45deg);
+  }  
 
-  20% {
+  20% {  
     border: 20px solid #3f2e14;
     background: transparent;
     width: 250px;
     height: 250px;
     top: -25px;
     left: -25px;
+    transform: rotate(45deg);
   }
- 
+
   40% {
     background: transparent;
     clip-path: polygon(
@@ -122,6 +153,7 @@ body {
     left: 65px;
     border: 2px solid #3f2e14;
     clip-path: polygon(0 0%, 0% 0, 100% 0, 100% 100%, 100% 100%, 0 100%);
+    transform: rotate(45deg);
   }
 
   60% {
@@ -135,14 +167,18 @@ body {
       #8f7e4b,
       #8f7e4b
     );
+    transform: rotate(45deg);  
   }
-
+90%{    
+  transform: rotate(45deg);   
+}
   100% {
     width: 70px;
     height: 70px;
     border-radius: 4px;
     top: 65px;
-    left: 65px;
+    left: 65px;  
+    transform: rotate(405deg);      
   }
 }
 
