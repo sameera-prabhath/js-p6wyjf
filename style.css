@@ -1,27 +1,40 @@
+:root {
+  --bgColor: #ffffff;
+  --primaryColor: #00469d;
+  --color1: #00469d;
+  --color2: #78B2AF; 
+  --color3: #FFF7D6;
+}
+
 body {
-  background-color: #202125;
+  background-color: var(--bgColor);
 }
 * {
   box-sizing: border-box;
 }
 .coderapy {
-  margin: 80px auto;
+  margin: 20px auto;
   margin-bottom: 5px;
   position: relative;
   width: 200px;
   height: 200px;
 }
- 
+
 .c {
   width: 200px;
   height: 200px;
   transform: scale(1);
-  background-color: #e27a7a;
-  background-image: radial-gradient(circle, #a99b5a, #8f7e4b, #3f2e14, #3f2e14);
+  background-image: radial-gradient(
+    circle,
+    var(--color3),
+    var(--color2),
+    var(--color1),
+    var(--primaryColor)
+  );
   border-radius: 50%;
   animation: co 5s ease;
   z-index: 1;
-} 
+}
 
 @keyframes co {
   0% {
@@ -41,7 +54,7 @@ body {
   top: 50px;
   width: 100px;
   height: 100px;
-  background-color: #202125;
+  background-color: var(--bgColor);
   border-radius: 50px;
   z-index: 1;
 }
@@ -52,8 +65,7 @@ body {
   top: 38px;
   width: 80px;
   height: 124px;
-  background-color: #202125;
-  /* border-radius: 50px 0 0 50px; */
+  background-color: var(--bgColor);
   border-radius: 50% 0 0 50%;
   z-index: 1;
 }
@@ -66,8 +78,13 @@ body {
   width: 50px;
   height: 50px;
   z-index: 2;
-  background-color: #eb8d8d;
-  background-image: radial-gradient(circle, #a99b5a, #8f7e4b, #3f2e14, #3f2e14);
+  background-image: radial-gradient(
+    circle,
+    var(--color3),
+    var(--color2),
+    var(--color1),
+    var(--primaryColor)
+  );
   border-radius: 50%;
 }
 .c2 {
@@ -85,19 +102,18 @@ body {
   left: 65px;
   background: linear-gradient(
     to right top,
-    #3f2e14,
-    #3f2e14,
-    #3f2e14,
-    #8f7e4b,
-    #8f7e4b,
-    #8f7e4b 
+    var(--primaryColor),
+    var(--color1),
+    var(--color2),
+    var(--color3)
   );
   animation: anim 5s linear;
+  border: 0px solid transparent;
 }
 
 @keyframes anim {
   0% {
-    border: 20px solid #3f2e14;
+    border: 20px solid var(--primaryColor);
     border-radius: 10px;
     background: transparent;
     width: 250px;
@@ -117,10 +133,10 @@ body {
       0 100%
     );
     transform: rotate(45deg);
-  }  
+  }
 
-  20% {  
-    border: 20px solid #3f2e14;
+  20% {
+    border: 20px solid var(--primaryColor);
     background: transparent;
     width: 250px;
     height: 250px;
@@ -130,6 +146,7 @@ body {
   }
 
   40% {
+    border-color: var(--primaryColor);
     background: transparent;
     clip-path: polygon(
       0 30%,
@@ -146,50 +163,49 @@ body {
   }
 
   50% {
+    border: 0px solid transparent;
     width: 70px;
     height: 70px;
     border-radius: 4px;
     top: 65px;
     left: 65px;
-    border: 2px solid #3f2e14;
+
     clip-path: polygon(0 0%, 0% 0, 100% 0, 100% 100%, 100% 100%, 0 100%);
     transform: rotate(45deg);
   }
 
   60% {
-    border: 0px solid #3f2e14;
     background: linear-gradient(
       to right top,
-      #3f2e14,
-      #3f2e14,
-      #3f2e14,
-      #8f7e4b,
-      #8f7e4b,
-      #8f7e4b
+      var(--primaryColor),
+      var(--color1),
+      var(--color2),
+      var(--color3)
     );
-    transform: rotate(45deg);  
+    transform: rotate(45deg);
   }
-90%{    
-  transform: rotate(45deg);   
-}
+  90% {
+    transform: rotate(45deg);
+  }
   100% {
     width: 70px;
     height: 70px;
     border-radius: 4px;
     top: 65px;
-    left: 65px;  
-    transform: rotate(405deg);      
+    left: 65px;
+    transform: rotate(405deg);
   }
 }
 
-/* sdsmfsdkfnsdjfkjfbdsjfbdkfb 
+/* text
 */
 
 h1 {
-  margin: 50px auto;
-  font-size: 42px;
+  margin: 5px auto;
+  font-size: 44px;
   font-family: monospace;
-  color: #599100;
+  -webkit-text-stroke: 3px var(--primaryColor);
+  color: var(--primaryColor);
   width: fit-content;
   position: relative;
 }
@@ -205,12 +221,12 @@ h1::after {
 }
 
 h1::before {
-  background: #202125;
+  background: var(--bgColor);
   animation: typing 3s steps(12) forwards;
 }
 h1::after {
   width: 3px;
-  background: #599100;
+  background: var(--primaryColor);
   animation: typing 3s steps(12) forwards, blink 0.75s steps(12) infinite;
 }
 
