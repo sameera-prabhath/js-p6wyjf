@@ -111,6 +111,12 @@ body {
   border: 0px solid transparent;
 }
 
+/* new code - TO TESTING  */
+.play { 
+  filter: drop-shadow(0 0 10px var(--primaryColor));
+  background: var(--primaryColor);
+}
+
 @keyframes anim {
   0% {
     border: 20px solid var(--primaryColor);
